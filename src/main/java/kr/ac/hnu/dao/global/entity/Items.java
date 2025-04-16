@@ -1,15 +1,24 @@
 package kr.ac.hnu.dao.global.entity;
 
-import lombok.Builder;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Getter
+@Entity
+@Table(name = "items")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Items {
 
+    @Id
+    @Column(name = "item_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @Column(name = "code", nullable = false, unique = true)
     private String itemCode;
 
     @Setter
@@ -18,10 +27,10 @@ public class Items {
     private LocalDateTime createdAt;
 
     @Builder
-    public Items(String name, Integer price, LocalDateTime createdAt) {
+    public Items(String name, String itemCode, Integer price) {
         this.name = name;
+        this.itemCode = itemCode;
         this.price = price;
-        this.createdAt = createdAt;
     }
     @Override
     public boolean equals(Object o) {
