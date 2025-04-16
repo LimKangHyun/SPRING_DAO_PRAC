@@ -51,6 +51,7 @@ public class TestUtil {
         return items;
     }
 
+    // 주문과 상품 리스트로 OrderItems 자동 생성하는 유틸 메서드
     public static List<OrderItems> genOrderItems(Orders order, List<Items> items, int amount) {
         return items.stream()
                 .map(i -> OrderItems.builder()
