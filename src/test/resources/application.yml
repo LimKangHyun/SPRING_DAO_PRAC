@@ -1,3 +1,18 @@
 spring:
-  mybatis:
-    type-aliases-package:
+  datasource:
+    url: jdbc:h2:mem:testH2;MODE=MYSQL;
+    username: sa
+    password:
+
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: create
+mybatis:
+  type-aliases-package: kr.ac.hnu.dao.global.entity
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mappers/*.xml

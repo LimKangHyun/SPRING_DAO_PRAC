@@ -1,6 +1,15 @@
 spring:
-  mybatis:
-    type-aliases-package: kr.ac.hnu.dao.global.entity
-    configuration:
-      map-underscore-to-camel-case: true
-      mapper-locations: classpath:mappers/*.xml
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3306
+    username: test
+    password: 0218
+mybatis:
+  type-aliases-package: kr.ac.hnu.dao.global.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    mapper-locations: classpath:mappers/*.xml
+
+
