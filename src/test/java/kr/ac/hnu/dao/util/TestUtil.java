@@ -10,14 +10,14 @@ import java.util.List;
 public class TestUtil {
 
     private static final String ITEM = "ITEM_";
+    private static final String ORDER = "ORDER_";
 
     public static String genRandomItemCode() {
         return ITEM + genNumStr();
     }
 
-    public static Integer genRandomOrderCode() {
-        int num = (int) (Math.random() * 100_000);
-        return num * 10_000;
+    public static String genRandomOrderCode() {
+        return ORDER + genNumStr();
     }
 
     public static Integer genRandomQuantity() {
