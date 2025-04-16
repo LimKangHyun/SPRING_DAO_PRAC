@@ -1,6 +1,8 @@
 package kr.ac.hnu.dao.util;
 
 import kr.ac.hnu.dao.global.entity.Items;
+import kr.ac.hnu.dao.global.entity.OrderItems;
+import kr.ac.hnu.dao.global.entity.Orders;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +13,15 @@ public class TestUtil {
 
     public static String genRandomItemCode() {
         return ITEM + genNumStr();
+    }
+
+    public static Integer genRandomOrderCode() {
+        int num = (int) (Math.random() * 100_000);
+        return num * 10_000;
+    }
+
+    public static Integer genRandomQuantity() {
+        return (int) (Math.random() * 100);
     }
 
     public static Integer genRandomPrice() {
@@ -38,5 +49,15 @@ public class TestUtil {
             items.add(generateItem());
         }
         return items;
+    }
+
+    public static List<OrderItems> genOrderItems(Orders order, List<Items> items, int amount) {
+        return items.stream()
+                .map(i -> OrderItems.builder()
+                        .orders(order)
+                        .quantity(amount)
+                        .items(i)
+                        .build()
+                ).toList();
     }
 }
