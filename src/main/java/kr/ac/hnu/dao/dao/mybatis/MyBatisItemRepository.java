@@ -2,13 +2,11 @@ package kr.ac.hnu.dao.dao.mybatis;
 
 import kr.ac.hnu.dao.global.entity.Items;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import javax.swing.text.html.Option;
 import java.util.Optional;
 
-@Slf4j
 @Repository
 @RequiredArgsConstructor
 public class MyBatisItemRepository {
