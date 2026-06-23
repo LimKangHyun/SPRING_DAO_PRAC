@@ -13,4 +13,5 @@ public interface ItemMapper {
     int update(@Param("itemCode") String itemCode, @Param("price") Integer price);
     Optional<Items> findByItemCode(@Param("itemCode") String itemCode);
     void delete(Items items);
+    List<Items> findAll();
 }
