@@ -6,7 +6,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.Optional;
 
-// @Mapper를 사용하면 myBatis가 자동으로 구현체로 인식
 @Mapper
 public interface ItemMapper {
     void save(Items items);
