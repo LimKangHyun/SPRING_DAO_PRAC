@@ -14,4 +14,9 @@ public interface ItemMapper {
     Optional<Items> findByItemCode(@Param("itemCode") String itemCode);
     void delete(Items items);
     List<Items> findAll();
+     List<Items> search(
+        @Param("keyword") String keyword,
+        @Param("minPrice") Integer minPrice,
+        @Param("maxPrice") Integer maxPrice
+    );
 }
